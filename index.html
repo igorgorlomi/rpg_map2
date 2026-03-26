@@ -18,7 +18,7 @@
   }
 
   .map img {
-    width: 100%;
+    width: 150%;
     display: block;
   }
 
@@ -33,9 +33,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 10px;
+    border-radius: 20px;
     background: rgba(255,255,0,0);
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   .zone:hover::after {
@@ -46,15 +46,15 @@
   /* иконка */
   .icon {
     position: absolute;
-    top: -20px;
+    top: -10px;
     left: 0;
-    font-size: 20px;
+    font-size: 10px;
   }
 
   /* подпись */
   .label {
     position: absolute;
-    top: -45px;
+    top: -35px;
     left: 0;
     background: rgba(0,0,0,0.7);
     color: white;
@@ -94,14 +94,14 @@
   <img src="map.png">
 
   <!-- Гильдии -->
-  <div class="zone" style="top: 120px; left: 70px; width: 200px; height: 100px;"
+  <div class="zone" style="top: 130px; left: 70px; width: 200px; height: 100px;"
        onclick="goTo('https://t.me/your_warriors_chat')">
 
     <div class="label">Гильдия Воинов</div>
     <div class="tooltip">Вход только для сильных духом войнов</div>
   </div>
 
-  <div class="zone" style="top: 120px; left: 290px; width: 200px; height: 100px;"
+  <div class="zone" style="top: 130px; left: 290px; width: 200px; height: 100px;"
        onclick="goTo('https://t.me/your_mages_chat')">
 
     <div class="label">Гильдия Магов</div>
