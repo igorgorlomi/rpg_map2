@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>RPG Карта</title>
+
+<style>
+  body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+  }
+
+  .map {
+    position: relative;
+    width: 900px;
+  }
+
+  .map img {
+    width: 100%;
+    display: block;
+  }
+
+  /* зона здания */
+  .zone {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  /* подсветка */
+  .zone::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: rgba(255,255,0,0);
+    transition: 0.2s;
+  }
+
+  .zone:hover::after {
+    background: rgba(255,255,0,0.25);
+    box-shadow: 0 0 15px yellow;
+  }
+
+  /* иконка */
+  .icon {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 20px;
+  }
+
+  /* подпись */
+  .label {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+  }
+
+  /* tooltip */
+  .tooltip {
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    width: 180px;
+    background: #222;
+    color: #ddd;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.2s;
+    pointer-events: none;
+  }
+
+  .zone:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="map">
+  <img src="map.png">
+
+  <!-- Гильдии -->
+  <div class="zone" style="top: 80px; left: 120px; width: 200px; height: 120px;"
+       onclick="goTo('https://t.me/your_warriors_chat')">
+
+    <div class="icon">⚔️</div>
+    <div class="label">Гильдия Воинов</div>
+    <div class="tooltip">Тренировка бойцов и найм героев</div>
+  </div>
+
+  <div class="zone" style="top: 80px; left: 320px; width: 200px; height: 120px;"
+       onclick="goTo('https://t.me/your_mages_chat')">
+
+    <div class="icon">🔮</div>
+    <div class="label">Гильдия Магов</div>
+    <div class="tooltip">Изучение заклинаний и магии</div>
+  </div>
+
+  <!-- Башня -->
+  <div class="zone" style="top: 40px; left: 600px; width: 120px; height: 140px;"
+       onclick="goTo('https://t.me/your_tower_chat')">
+
+    <div class="icon">🗼</div>
+    <div class="label">Дозорная башня</div>
+    <div class="tooltip">Наблюдение за окрестностями</div>
+  </div>
+
+  <!-- Таверна -->
+  <div class="zone" style="top: 300px; left: 180px; width: 180px; height: 120px;"
+       onclick="goTo('https://t.me/your_tavern_chat')">
+
+    <div class="icon">🍺</div>
+    <div class="label">Лис и Пёс и Кот и Гусь</div>
+    <div class="tooltip">Слухи, квесты и отдых</div>
+  </div>
+
+  <!-- Оракул -->
+  <div class="zone" style="top: 200px; left: 600px; width: 160px; height: 140px;"
+       onclick="goTo('https://t.me/your_oracle_chat')">
+
+    <div class="icon">✨</div>
+    <div class="label">Оракул мудрости</div>
+    <div class="tooltip">Предсказания и тайные знания</div>
+  </div>
+
+  <!-- Святилище -->
+  <div class="zone" style="top: 380px; left: 520px; width: 180px; height: 140px;"
+       onclick="goTo('https://t.me/your_heroes_chat')">
+
+    <div class="icon">🏛️</div>
+    <div class="label">Святилище героев</div>
+    <div class="tooltip">Возрождение легенд</div>
+  </div>
+
+  <!-- Река -->
+  <div class="zone" style="top: 450px; left: 100px; width: 300px; height: 100px;"
+       onclick="goTo('https://t.me/your_river_chat')">
+
+    <div class="icon">💧</div>
+    <div class="label">Река желаний</div>
+    <div class="tooltip">Исполняет желания (иногда 😏)</div>
+  </div>
+
+</div>
+
+<script>
+  function goTo(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
